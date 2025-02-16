@@ -1,11 +1,4 @@
-def get_valid_num(prompt):
-    while True:
-        try:
-            return(int(input(prompt)))
-        except ValueError:
-            print('Invalid input.')
-            print()
-
+from mymodule import get_valid_num as validNumCheck  # type: ignore
 
 def exponent():
 
@@ -15,8 +8,8 @@ def exponent():
             numList.append(str(basenum))
         return numList
     
-    base = get_valid_num('Enter a number: ')
-    exponent = get_valid_num('Enter exponent number: ')
+    base = validNumCheck('Enter a number: ')
+    exponent = validNumCheck('Enter exponent number: ')
     answer =  base ** exponent
     baseString = ' * '.join(printNumInOrder(base,exponent))   # put list together as string
     

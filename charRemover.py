@@ -1,15 +1,9 @@
-def get_valid_num(prompt):
-    while True:
-        try:
-            return(int(input(prompt)))
-        except ValueError:
-            print('Invalid input.')
-            print()
+from mymodule import get_valid_num as validNumCheck  # type: ignore
             
 def remover():
     string = input('Enter a word: ')
     while True:
-        number = get_valid_num('How many letters do want to delete: ')
+        number = validNumCheck('How many letters do want to delete: ')
         if number > len(string):
             print('Sorry word is not that long')
             continue
